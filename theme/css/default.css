@@ -1217,8 +1217,7 @@ article.smaller q:before, article.smaller q:after {
 /* ===== SLIDE CONTENT ===== */
 /* line 839, ../scss/default.scss */
 .logoslide img {
-  width: 383px;
-  height: 92px;
+
 }
 
 /* line 845, ../scss/default.scss */
@@ -1321,11 +1320,10 @@ aside.gdbar.bottom {
 }
 /* line 913, ../scss/default.scss */
 aside.gdbar img {
-  width: 85px;
-  height: 85px;
-  position: absolute;
-  right: 0;
-  margin: 8px 15px;
+    height: 70px;
+    margin: 13px 13px 0 0;
+    position: absolute;
+    right: 0;
 }
 
 /* line 924, ../scss/default.scss */
@@ -1337,7 +1335,7 @@ aside.gdbar img {
   font-size: 65px;
   line-height: 1.4;
   letter-spacing: -3px;
-  color: #515151;
+  color: #00427a;
 }
 /* line 934, ../scss/default.scss */
 .title-slide hgroup h2 {
