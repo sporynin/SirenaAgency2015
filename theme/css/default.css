@@ -473,7 +473,7 @@ h2 {
   font-size: 45px;
   line-height: 45px;
   letter-spacing: -2px;
-  color: #515151;
+  color: #00427a;
 }
 
 /* line 323, ../scss/default.scss */
@@ -808,6 +808,15 @@ slide.fill {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.slide-d3 h2 {
+  margin-bottom: 1em;
+}
+
+.slide-d3 svg {
+  height: 500px;
+  width: 100%;
 }
 
 /* Size variants */
@@ -1488,3 +1497,5 @@ aside.gdbar img {
     font-family: monospace !important;
   }
 }
+
+
