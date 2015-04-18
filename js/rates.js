@@ -2,8 +2,7 @@
  * Created by root on 4/18/15.
  */
 window.addEventListener("load", function() {
-    var width = 960,
-        height = 500;
+    var width = 960, height = 500;
 
     var data = [
         {name: 'A', value: .08167},
@@ -34,12 +33,9 @@ window.addEventListener("load", function() {
         {name: 'Z', value: .00074}
     ];
 
-    var y = d3.scale.linear()
-        .range([height, 0]);
+    var y = d3.scale.linear().range([height, 0]);
 
-    var chart = d3.select(".chart-2")
-        .attr("width", width)
-        .attr("height", height);
+    var chart = d3.select("#rateschart").attr("width", width).attr("height", height);
 
     y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
@@ -58,7 +54,7 @@ window.addEventListener("load", function() {
     bar.append("text")
         .attr("x", barWidth / 2)
         .attr("y", function(d) { return y(d.value) + 3; })
-        .attr("dy", ".75em")
+        .attr("dy", ".5em")
         .text(function(d) { return d.value; });
 
     function type(d) {

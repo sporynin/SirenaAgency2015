@@ -10,7 +10,7 @@
   <!--<meta name="viewport" content="initial-scale=0.4">-->
   <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" media="all" href="theme/css/default.css">
-    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="all" href="theme/css/charts.css">
     <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
@@ -35,8 +35,11 @@
    </slide>
 
     <slide>
-        <h1>Наши достижения</h1>
-        <article>
+        <hgroup class="auto-fadein">
+           <h2>Наши достижения</h2>
+        </hgroup>
+        <article class="auto-fadein">
+            <svg id="growchart"></svg>
         </article>
     </slide>
 
@@ -49,23 +52,26 @@
     <slide>
         <hgroup class="auto-fadein">
             <h2>Факторы изменений</h2>
-            <article class="auto-fadein">
-                <ul>
-                    <li>Конфликт на Украине</li>
-                    <li>Высокая волатильность курса</li>
-                    <li>Повышение таксы ZZ</li>
-                    <li>Международные санкции</li>
-                    <li>Закон об НСПК</li>
-                </ul>
-            </article>
         </hgroup>
+        <article class="auto-fadein">
+	   <p></p>
+	   <ul>
+	     <li>Конфликт на Украине</li>
+	     <li>Высокая волатильность курса</li>
+	     <li>Повышение таксы ZZ</li>
+	     <li>Международные санкции</li>
+	     <li>Закон об НСПК</li>
+	   </ul>
+         </article>
     </slide>
 
     <slide>
          <hgroup class="auto-fadein">
              <h2>Соотношение продаж</h2>
-             <svg id="rateschart"></svg>
          </hgroup>
+         <article class="auto-fadein">
+             <svg id="rateschart"></svg>
+         </article>
     </slide>
 
     <slide>
@@ -78,33 +84,42 @@
     <slide>
         <article class="flexbox vcenter">
             <p>Кто же победил?</p>
-            <ul>
-                <li></li>
-                <li></li>
+            <ul class="build">
+                <img src="images/ecommerce.jpg"/>
+                <img src="images/ecommerce4.jpg"/>
             </ul>
         </article>
     </slide>
 
     <slide>
-        <h1>Мультитикет</h1>
+        <hgroup>
+          <h2>Мультитикет</h2>
+        </hgroup>
         <article>
             <p>Комбинируем некомбинированное</p>
-            <ul>
-                <li></li>
-                <li></li>
+            <ul class="build">
+               <li>различныe подклассы</li>
+               <li>перевозчиков без интерлайна</li>
+               <li>различные сеансы различных GDS</li> 
+               <li>новые стыковки</li>
             </ul>
         </article>
     </slide>
 
     <slide>
-        <h1>Конверсия</h1>
+        <hgroup>
+          <h2>Конверсия</h2>
+        </hgroup>
         <article>
         </article>
     </slide>
 
     <slide>
-        <h1>Статистика по браузерам</h1>
-        <article>
+        <hgroup>
+          <h2>Статистика по браузерам</h2>
+        </hgroup>
+        <article class="flexbox vcenter">
+          <svg id="browserchart"></svg>
         </article>
     </slide>
 
@@ -112,7 +127,7 @@
       <aside class="gdbar right"><img src="images/ips_logo_128.png"></aside>
       <hgroup class="auto-fadein">
         <h1>&lt;Спасибо за внимание!&gt;</h1>
-         <p data-config-contact></p>
+        <p data-config-contact></p>
       </hgroup>
     </slide>
 
