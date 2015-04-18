@@ -1,11 +1,3 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +9,9 @@ URL: https://code.google.com/p/io-2012-slides
   <!--This one seems to work all the time, but really small on ipad-->
   <!--<meta name="viewport" content="initial-scale=0.4">-->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" media="all" href="theme/css/default.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
@@ -26,170 +19,110 @@ URL: https://code.google.com/p/io-2012-slides
 
 <slides class="layout-widescreen">
 
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/ips_logo.png"></span>
-    </article>
-  </slide>
+    <slide class="logoslide nobackground">
+     <article class="flexbox vcenter">
+       <span><img src="images/ips_logo.png"></span>
+     </article>
+   </slide>
 
-  <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/ips_logo_128.png"></aside>
-    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-    <hgroup class="auto-fadein">
-      <h1 data-config-title></h1>
-      <p data-config-presenter></p>
-    </hgroup>
-  </slide>
+    <slide class="title-slide segue nobackground">
+     <aside class="gdbar"><img src="images/ips_logo_128.png"></aside>
+     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+     <hgroup class="auto-fadein">
+       <h1 data-config-title></h1>
+       <p data-config-presenter></p>
+     </hgroup>
+   </slide>
 
-  <slide class="slide-d3 nobackground">
-    <hgroup class="auto-fadein">
-      <h2>d3</h2>
-      <svg class="chart"></svg>
-      <style>
-        .chart rect {
-          fill: steelblue;
-        }
+    <slide>
+        <h1>Наши достижения</h1>
+        <article>
+        </article>
+    </slide>
 
-        .chart text {
-          fill: white;
-          font: 10px sans-serif;
-          text-anchor: end;
-        }
-      </style>
-      <script>
-        window.addEventListener("load",function() {
-          var data = [4, 8, 15, 16, 23, 42];
+    <slide>
+        <article class="flexbox vcenter">
+            <p>Битва ТКП vs BSP</p>
+        </article>
+    </slide>
 
-          var width = 420,
-              barHeight = 20;
+    <slide>
+        <hgroup class="auto-fadein">
+            <h2>Факторы изменений</h2>
+            <article class="auto-fadein">
+                <ul>
+                    <li>Конфликт на Украине</li>
+                    <li>Высокая волатильность курса</li>
+                    <li>Повышение таксы ZZ</li>
+                    <li>Международные санкции</li>
+                    <li>Закон об НСПК</li>
+                </ul>
+            </article>
+        </hgroup>
+    </slide>
 
-          var x = d3.scale.linear()
-              .domain([0, d3.max(data)])
-              .range([0, width]);
+    <slide>
+         <hgroup class="auto-fadein">
+             <h2>Соотношение продаж</h2>
+             <svg id="rateschart"></svg>
+         </hgroup>
+    </slide>
 
-          var chart = d3.select(".chart")
-              .attr("width", width)
-              .attr("height", barHeight * data.length);
+    <slide>
+        <hgroup class="auto-fadein">
+            <h2>Скорость прироста</h2>
+            <svg id="speedchart"></svg>
+        </hgroup>
+    </slide>
 
-          var bar = chart.selectAll("g")
-              .data(data)
-            .enter().append("g")
-              .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+    <slide>
+        <article class="flexbox vcenter">
+            <p>Кто же победил?</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </article>
+    </slide>
 
-          bar.append("rect")
-              .attr("width", x)
-              .attr("height", barHeight - 1);
+    <slide>
+        <h1>Мультитикет</h1>
+        <article>
+            <p>Комбинируем некомбинированное</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </article>
+    </slide>
 
-          bar.append("text")
-              .attr("x", function(d) { return x(d) - 3; })
-              .attr("y", barHeight / 2)
-              .attr("dy", ".35em")
-              .text(function(d) { return d; });
-        });
-      </script>
-    </hgroup>
-  </slide>
+    <slide>
+        <h1>Конверсия</h1>
+        <article>
+        </article>
+    </slide>
 
-  <slide class="slide-d3 nobackground">
-    <hgroup class="auto-fadein">
-      <h2>d3</h2>
-      <svg class="chart-2"></svg>
-      <style>
-        .chart-2 rect {
-          fill: steelblue;
-        }
+    <slide>
+        <h1>Статистика по браузерам</h1>
+        <article>
+        </article>
+    </slide>
 
-        .chart-2 text {
-          fill: white;
-          font: 10px sans-serif;
-          text-anchor: end;
-        }
-      </style>
-      <script>
-        window.addEventListener("load",function() {
-          var width = 960,
-              height = 500;
+    <slide class="title-slide segue nobackground">
+      <aside class="gdbar right"><img src="images/ips_logo_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h1>&lt;Спасибо за внимание!&gt;</h1>
+         <p data-config-contact></p>
+      </hgroup>
+    </slide>
 
-          var data = [
-            {name: 'A', value: .08167},
-            {name: 'B', value: .01492},
-            {name: 'C', value: .02782},
-            {name: 'D', value: .04253},
-            {name: 'E', value: .12702},
-            {name: 'F', value: .02288},
-            {name: 'G', value: .02015},
-            {name: 'H', value: .06094},
-            {name: 'I', value: .06966},
-            {name: 'J', value: .00153},
-            {name: 'K', value: .00772},
-            {name: 'L', value: .04025},
-            {name: 'M', value: .02406},
-            {name: 'N', value: .06749},
-            {name: 'O', value: .07507},
-            {name: 'P', value: .01929},
-            {name: 'Q', value: .00095},
-            {name: 'R', value: .05987},
-            {name: 'S', value: .06327},
-            {name: 'T', value: .09056},
-            {name: 'U', value: .02758},
-            {name: 'V', value: .00978},
-            {name: 'W', value: .02360},
-            {name: 'X', value: .00150},
-            {name: 'Y', value: .01974},
-            {name: 'Z', value: .00074}
-          ];
+    <slide class="logoslide nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/ips_logo.png"></span>
+      </article>
+    </slide>
 
-          var y = d3.scale.linear()
-              .range([height, 0]);
-
-          var chart = d3.select(".chart-2")
-              .attr("width", width)
-              .attr("height", height);
-
-          y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-          var barWidth = width / data.length;
-
-          var bar = chart.selectAll("g")
-              .data(data)
-            .enter().append("g")
-              .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
-
-          bar.append("rect")
-              .attr("y", function(d) { return y(d.value); })
-              .attr("height", function(d) { return height - y(d.value); })
-              .attr("width", barWidth - 1);
-
-          bar.append("text")
-              .attr("x", barWidth / 2)
-              .attr("y", function(d) { return y(d.value) + 3; })
-              .attr("dy", ".75em")
-              .text(function(d) { return d.value; });
-
-          function type(d) {
-            d.value = +d.value; // coerce to number
-            return d;
-          }
-        });
-      </script>
-    </hgroup>
-  </slide>
-
-  <slide class="title-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/ips_logo_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h1>&lt;Спасибо за внимание!&gt;</h1>
-      <p data-config-contact></p>
-    </hgroup>
-  </slide>
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/ips_logo.png"></span>
-    </article>
-  </slide>
-
-  <slide class="backdrop"></slide>
+    <slide class="backdrop"></slide>
 
 </slides>
 

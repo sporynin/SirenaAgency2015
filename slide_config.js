@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'Тренды платежных решений<br/> для онлайн-трэвел',
     subtitle: '',
-    //eventTitle: 'Google I/O 2013',
+    eventTitle: 'Annual Sirena-Travel conference for travel agencies, 2015',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -13,7 +13,7 @@ var SLIDE_CONFIG = {
     fonts: [
       'Open Sans:regular,semibold,italic,italicsemibold',
       'Source Code Pro'
-    ],
+    ]
     //theme: ['mytheme'], // Add your own custom themes or styles in /theme/css. Leave off the .css extension.
   },
 
