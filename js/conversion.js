@@ -25,6 +25,6 @@ window.addEventListener('slideenter', function(e) {
         loadLiquidFillGauge("conversion2", 75, cons);
         loadLiquidFillGauge("risk2", 0, risks);
         loadLiquidFillGauge("conversion3", 93, cons);
-        loadLiquidFillGauge("risk3", 10, risks);
+        loadLiquidFillGauge("risk3", 5, risks);
     }
 });
