@@ -26,6 +26,26 @@ function dorate(id, data, col) {
         .attr("height", function(d) { return y(d.y0) - y(d.y1); })
         .attr("width", x.rangeBand())
         .style("fill", function(d) { return color(d.name); });
+
+    var legend = chart.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0, " + i * 20 + ")"; });
+
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+    legend.append("text")
+      .attr("x", 42)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
     /*
     bar.append("text")
         .attr("x", barWidth / 2)

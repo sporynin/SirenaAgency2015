@@ -1,11 +1,14 @@
 window.addEventListener("load", function() {
 
-var margin = {top: 30, right: 30, bottom: 130, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 30, right: 30, bottom: 130, left: 50};
+var width = 960, height = 500;
 
 var x = d3.time.scale().range([0, width]);
 var y = d3.scale.linear().range([height, 0]);
+var color = d3.scale.ordinal()
+    .range(["blue", "red", "green", "orange"]);
+    color.domain(["tchsum", "bspsum", "tchcnt", "bspcnt"]);
+
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -31,9 +34,7 @@ var line4 = d3.svg.line().interpolate("monotone")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.speed); });
 
-var svg = d3.select("#speedchart")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom);
+var svg = d3.select("#speedchart").attr("width", width).attr("height", height);
     //.append("g")
     //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -70,4 +71,23 @@ var svg = d3.select("#speedchart")
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis);
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
 });
