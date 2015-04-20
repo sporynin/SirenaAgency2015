@@ -1492,3 +1492,27 @@ aside.gdbar img {
 slide.multipass {
   background: url(../../images/multipass.jpg) no-repeat 95% 40px !important;  
 }
+
+.versus {
+  background: url(../../images/versus.svg) no-repeat 50% 50%;
+  height: 400px;
+  width: 800px;
+}
+
+.versus:before {
+  display: block;
+  content: " ";
+  float: left;
+  background: url(../../images/tch.png) no-repeat 50% 50% / auto 200px;
+  height: 400px;
+  width: 200px;
+}
+
+.versus:after {
+  display: block;
+  content: " ";
+  float: right;
+  background: url(../../images/iata.svg) no-repeat 50% 50%;
+  height: 400px;
+  width: 200px;
+}
