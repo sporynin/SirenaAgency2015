@@ -6,9 +6,9 @@ function emptyTag(tagId) {
 }
 
 window.addEventListener('slideenter', function(e) {
-    if (e.slideNumber === 11) {
+    if (e.slideNumber === 11 || e.slideNumber === 12) {
         // запускаем анимацию на каждом входе в слайд
-        var tags = ['conversion1', 'risk1', 'conversion2', 'risk2'];
+        var tags = ['conversion1', 'risk1', 'conversion2', 'risk2', 'conversion3', 'risk3'];
         for (var i = tags.length; i--; ) {
             // очистим содержимое svg-тэгов, чтобы они не были уже заполненными
             emptyTag(tags[i]);
@@ -24,5 +24,7 @@ window.addEventListener('slideenter', function(e) {
         loadLiquidFillGauge("risk1", 95, risks);
         loadLiquidFillGauge("conversion2", 75, cons);
         loadLiquidFillGauge("risk2", 0, risks);
+        loadLiquidFillGauge("conversion3", 93, cons);
+        loadLiquidFillGauge("risk3", 10, risks);
     }
 });

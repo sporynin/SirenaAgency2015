@@ -2,13 +2,16 @@
  * Created by root on 4/18/15.
  */
 function dorate(id, data, col) {
-    var width = 960, height = 500;
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+    var x = d3.scale.ordinal().rangeRoundBands([0, width - margin.left - margin.right], .1);
     var y = d3.scale.linear().range([height, 0]);
     var color = d3.scale.ordinal().range(col);
     color.domain(["tch", "bsp"]);
-    var chart = d3.select(id).attr("width", width).attr("height", height);
+    var chart = d3.select(id)
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+    var xAxis = d3.svg.axis().scale(x).orient("bottom").tickFormat(d3.time.format('%m %y'));
+    var yAxis = d3.svg.axis().scale(y).orient("right");
 
     data.forEach(function(d) {
        d.bars = [{name : "tch", y0 : 0, y1 : d.tch}, {name : "bsp", y0 : d.tch, y1 : d.tch + d.bsp}];
@@ -34,18 +37,28 @@ function dorate(id, data, col) {
       .attr("transform", function(d, i) { return "translate(0, " + i * 20 + ")"; });
 
     legend.append("rect")
-      .attr("x", 0)
+      .attr("x", width - 18)
       .attr("width", 18)
       .attr("height", 18)
       .attr("class", color);
 
     legend.append("text")
-      .attr("x", '3em')
+      .attr("x", width - 24)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
       .text(function(d) { return d; });
 
+    chart.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0, " + height + ")")
+      .call(xAxis);
+
+    /*
+    chart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+    *
     /*
     bar.append("text")
         .attr("x", barWidth / 2)

@@ -1,8 +1,5 @@
 window.addEventListener("load", function() {
 
-var margin = {top: 30, right: 30, bottom: 130, left: 50};
-var width = 960, height = 500;
-
 var x = d3.time.scale().range([0, width]);
 var y = d3.scale.linear().range([height, 0]);
 var color = d3.scale.ordinal()
@@ -34,7 +31,9 @@ var line4 = d3.svg.line().interpolate("monotone")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.speed); });
 
-var svg = d3.select("#speedchart").attr("width", width).attr("height", height);
+var svg = d3.select("#speedchart")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
     //.append("g")
     //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
