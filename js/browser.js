@@ -123,20 +123,39 @@
 })();
 
 window.addEventListener("load", function() {
-var width = 960, height = 500;
+	var width = 960, height = 500;
 
-var salesData=[
-	{label:"Chrome", value: 1471, color:"#3366CC"},
-	{label:"IE", value: 403, color:"#DC3912"},
-	{label:"Firefox", value: 428, color:"#FF9900"},
-	{label:"Yandex", value: 376, color:"#109618"},
-	{label:"Android", value: 200, color:"#990099"},
-	{label:"iOS", value: 645, color:"#990099"},
-        {label:"Opera", value: 302, color: "black"},
-];
+	var salesData=[
+		{label:"Chrome", value: 1471, color:"#ffcd02"},
+		{label:"IE", value: 403, color:"#007aff"},
+		{label:"Firefox", value: 428, color:"#E66000"},
+		{label:"Yandex", value: 376, color:"#ff0000"},
+		{label:"Android", value: 200, color:"#109618"},
+		{label:"iOS", value: 645, color:"#1ad6fd"},
+	    {label:"Opera", value: 302, color: "#990099"},
+	];
 
-var svg = d3.select("#browserchart").attr("width", width).attr("height", height);
+	var svg = d3.select("#browserchart").attr("width", width).attr("height", height);
 
-Donut3D.draw("#browserchart", salesData, 300, 250, 200, 150, 30, 0.4);
+	Donut3D.draw("#browserchart", salesData, 300, 250, 200, 150, 30, 0.4);
+
+    var legend = svg.selectAll(".legend")
+      .data(salesData)
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0, " + i * 20 + ")"; });
+
+    legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", function(d) { return d.color; });
+
+    legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d.label; });
 
 });

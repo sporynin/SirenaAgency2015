@@ -32,9 +32,9 @@ svg {
 } 
 
 svg text.percent{
-	fill:white;
+	fill: white;
 	text-anchor:middle;
-	font-size:12px;
+	font-size: 14px;
 }
 
 .axis path,
