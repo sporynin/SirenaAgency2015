@@ -25,7 +25,7 @@ function dorate(id, data, col) {
         .attr("y", function(d) { return y(d.y1); })
         .attr("height", function(d) { return y(d.y0) - y(d.y1); })
         .attr("width", x.rangeBand())
-        .style("fill", function(d) { return color(d.name); });
+        .attr("class", function(d) { return color(d.name); });
 
     var legend = chart.selectAll(".legend")
       .data(color.domain().slice().reverse())
@@ -37,10 +37,10 @@ function dorate(id, data, col) {
       .attr("x", 0)
       .attr("width", 18)
       .attr("height", 18)
-      .style("fill", color);
+      .attr("class", color);
 
     legend.append("text")
-      .attr("x", 42)
+      .attr("x", '3em')
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
@@ -57,6 +57,6 @@ function dorate(id, data, col) {
 };
 
 window.addEventListener("load", function() {
-     dorate("#ratsumchart", sum, ["blue", "red"]);
-     dorate("#ratcntchart", cnt, ["green", "orange"]); 
+     dorate("#ratsumchart", sum, ["tchsum", "bspsum"]);
+     dorate("#ratcntchart", cnt, ["tchcnt", "bspcnt"]); 
 });

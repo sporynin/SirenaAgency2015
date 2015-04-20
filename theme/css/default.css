@@ -1489,3 +1489,6 @@ aside.gdbar img {
 }
 
 
+slide.multipass {
+  background: url(../../images/multipass.jpg) no-repeat 95% 40px !important;  
+}

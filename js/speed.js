@@ -6,7 +6,7 @@ var width = 960, height = 500;
 var x = d3.time.scale().range([0, width]);
 var y = d3.scale.linear().range([height, 0]);
 var color = d3.scale.ordinal()
-    .range(["blue", "red", "green", "orange"]);
+    .range(["tchsum", "bspsum", "tchcnt", "bspcnt"]);
     color.domain(["tchsum", "bspsum", "tchcnt", "bspcnt"]);
 
 
@@ -48,19 +48,19 @@ var svg = d3.select("#speedchart").attr("width", width).attr("height", height);
 
   svg.append("path")
       .datum(data1)
-      .attr("class", "blueline")
+      .attr("class", "line tchsum")
       .attr("d", line1);
   svg.append("path")
       .datum(data2)
-      .attr("class", "redline")
+      .attr("class", "line bspsum")
       .attr("d", line2);
   svg.append("path")
       .datum(data3)
-      .attr("class", "greenline")
+      .attr("class", "line tchcnt")
       .attr("d", line3);
   svg.append("path")
       .datum(data4)
-      .attr("class", "orangeline")
+      .attr("class", "line bspcnt")
       .attr("d", line4);
 
   svg.append("g")
@@ -82,7 +82,7 @@ var svg = d3.select("#speedchart").attr("width", width).attr("height", height);
       .attr("x", width - 18)
       .attr("width", 18)
       .attr("height", 18)
-      .style("fill", color);
+      .attr("class", color);
 
   legend.append("text")
       .attr("x", width - 24)
