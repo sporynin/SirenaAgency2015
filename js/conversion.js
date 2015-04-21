@@ -6,7 +6,7 @@ function emptyTag(tagId) {
 }
 
 window.addEventListener('slideenter', function(e) {
-    if (e.slideNumber === 11 || e.slideNumber === 12) {
+    if (e.slideNumber === 13 || e.slideNumber === 14) {
         // запускаем анимацию на каждом входе в слайд
         var tags = ['conversion1', 'risk1', 'conversion2', 'risk2', 'conversion3', 'risk3'];
         for (var i = tags.length; i--; ) {

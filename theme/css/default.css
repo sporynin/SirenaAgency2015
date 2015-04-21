@@ -1516,3 +1516,19 @@ slide.multipass {
   height: 400px;
   width: 200px;
 }
+
+.flex-2 {
+  display: flex;
+  height: 80%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.flex-2__child {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}

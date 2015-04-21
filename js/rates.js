@@ -28,7 +28,7 @@ function dorate(id, data, col) {
         .data(function(d) { return d.bars; }).enter().append("rect")
         .attr("y", function(d) { return y(d.y1 - d.y0); })
         .attr("height", function(d) { return height - y(d.y1 - d.y0); })
-        .attr("x", function(d) { console.log(d); return d.name == "tch" ? 0 : x.rangeBand() / n; })
+        .attr("x", function(d) { return d.name == "tch" ? 0 : x.rangeBand() / n; })
         .attr("width", x.rangeBand() / n)
         .attr("class", function(d) { return color(d.name); });
 
