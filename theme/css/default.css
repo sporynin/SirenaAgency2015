@@ -849,14 +849,17 @@ article.smaller q:before, article.smaller q:after {
 /* line 603, ../scss/default.scss */
 .build .to-build {
   opacity: 0;
+  display: none;
 }
 /* line 607, ../scss/default.scss */
 .build .build-fade {
   opacity: 0.3;
+  display: none;
 }
 /* line 610, ../scss/default.scss */
 .build .build-fade:hover {
   opacity: 1.0;
+  display: none;
 }
 
 /* line 617, ../scss/default.scss */
